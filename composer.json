@@ -1,0 +1,35 @@
+{
+    "name": "noud/api-platform-product-offer-bundle",
+    "description": "Products and Offers bundle conform API-Platform",
+    "keywords": [
+        "products",
+        "offers",
+        "API-Platform",
+        "Symfony",
+        "Bundle",
+        "symfony-bundle",
+        "bridge"
+    ],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+          "name": "noud",
+          "email": "noud4@home.nl"
+        }
+    ],
+        "require": {
+        "php": ">=7.2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Noud\\ProductOfferBundle\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Noud\\ProductOfferBundle\\Tests\\": "tests"
+        }
+    }
+}
