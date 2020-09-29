@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "2d68424c-18c1-4cc4-aaf4-270c665f6942",
+		"name": "API-Platform-offer-product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "filter",
+			"item": [
+				{
+					"name": "range",
+					"item": [
+						{
+							"name": "price between",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/offers?price[between]=12.99..15.99",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"offers"
+									],
+									"query": [
+										{
+											"key": "price[between]",
+											"value": "12.99..15.99"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "joining two values",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/offers?price[gt]=12.99&price[lt]=19.99",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"offers"
+									],
+									"query": [
+										{
+											"key": "price[gt]",
+											"value": "12.99"
+										},
+										{
+											"key": "price[lt]",
+											"value": "19.99"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "numeric",
+					"item": [
+						{
+							"name": "sold",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/offers?sold=1",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"offers"
+									],
+									"query": [
+										{
+											"key": "sold",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "beff7f3e-f4f2-4e35-851a-c3c904f1ba82",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "7afc0e28-8810-4a43-80c2-8a67979d6776",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "exists",
+					"item": [
+						{
+							"name": "transportFees",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/offers?exists[transportFees]=true",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"offers"
+									],
+									"query": [
+										{
+											"key": "exists[transportFees]",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "boolean",
+					"item": [
+						{
+							"name": "isAvailableGenericallyInMyCountry",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/offers?isAvailableGenericallyInMyCountry=true",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"offers"
+									],
+									"query": [
+										{
+											"key": "isAvailableGenericallyInMyCountry",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "date",
+					"item": [
+						{
+							"name": "createdAt",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/offers?createdAt[after]=2018-03-19",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"offers"
+									],
+									"query": [
+										{
+											"key": "createdAt[after]",
+											"value": "2018-03-19"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "order",
+					"item": [
+						{
+							"name": "order name desc id asc",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/offers?order[name]=desc&order[id]=asc",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"offers"
+									],
+									"query": [
+										{
+											"key": "order[name]",
+											"value": "desc"
+										},
+										{
+											"key": "order[id]",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "search",
+					"item": [
+						{
+							"name": "price",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/offers?price=10",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"offers"
+									],
+									"query": [
+										{
+											"key": "price",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "description",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/offers?description=shirt",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"offers"
+									],
+									"query": [
+										{
+											"key": "description",
+											"value": "shirt"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "combined",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/offers?price=10&description=shirt",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"offers"
+									],
+									"query": [
+										{
+											"key": "price",
+											"value": "10"
+										},
+										{
+											"key": "description",
+											"value": "shirt"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
