@@ -13,6 +13,7 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\RangeFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use Doctrine\ORM\Mapping as ORM;
 use Noud\UtilBundle\Filter\RegexpFilter;
+use Noud\UtilBundle\Filter\RelatedFilter;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -20,13 +21,15 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ApiResource(iri="http://schema.org/Offer")
  * @ ApiFilter(RegexpFilter::class)
- * @ ApiFilter(DateFilter::class, properties={"createdAt": DateFilter::EXCLUDE_NULL})
+ * @ ApiFilter(RegexpFilter::class, properties={"description"})
  * @ApiFilter(SearchFilter::class, properties={"id": "exact", "price": "exact", "description": "partial", "product": "exact"})
+ * @ApiFilter(RelatedFilter::class, properties={"product.name"})
+ * @ ApiFilter(DateFilter::class, properties={"createdAt": DateFilter::EXCLUDE_NULL})
  * @ ApiFilter(BooleanFilter::class, properties={"isAvailableGenericallyInMyCountry"})
  * @ ApiFilter(NumericFilter::class, properties={"sold"})
- * @ApiFilter(RangeFilter::class, properties={"price"})
+ * @  ApiFilter(RangeFilter::class, properties={"price"})
  * @ ApiFilter(ExistsFilter::class, properties={"transportFees"})
- * @ApiFilter(OrderFilter::class, properties={"id", "name"}, arguments={"orderParameterName"="order"})
+ * @  ApiFilter(OrderFilter::class, properties={"id", "name"}, arguments={"orderParameterName"="order"})
  * @ORM\Entity
  */
 class Offer
@@ -52,14 +55,14 @@ class Offer
     public $price;
 
     /**
-     * @ORM\Column(type="bool")
-     * @Assert\Type(type="bool")
+     * @ORM\Column(type="boolean")
+     * @Assert\Type(type="boolean")
      */
     public $availableGenericallyInMyCountry = true;
 
     /**
-     * @ORM\Column(type="bool", nullable=true)
-     * @Assert\Type(type="bool")
+     * @ORM\Column(type="boolean", nullable=true)
+     * @Assert\Type(type="boolean")
      */
     public $sold = false;
 

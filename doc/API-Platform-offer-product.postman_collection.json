@@ -320,6 +320,59 @@
 					],
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
+				},
+				{
+					"name": "custom",
+					"item": [
+						{
+							"name": "regexp",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/offers?description=^ch",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"offers"
+									],
+									"query": [
+										{
+											"key": "description",
+											"value": "^ch"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "related",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/offers?product.name=coding",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"offers"
+									],
+									"query": [
+										{
+											"key": "product.name",
+											"value": "coding"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				}
 			],
 			"protocolProfileBehavior": {}
